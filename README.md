@@ -1,21 +1,121 @@
-# End-to-End Enterprise Data Engineering Pipeline
-An infrastructure-minded data engineering pipeline deployed within the Snowflake Data Cloud utilizing the **Ingestion-Transformation-Delivery (I-T-D)** architectural framework.
+# Snowflake Tasty Bytes Data Engineering Pipeline
 
-## 🏗️ Pipeline Architecture
+An end-to-end Snowflake data engineering project using AWS S3, SQL, Snowflake Marketplace weather data, user-defined functions, Python and Streamlit.
 
-### 1. Data Ingestion
-* **Cloud Storage Integration**: Configured secure stages to programmatically ingest close to 1 GB of raw, transactional sales datasets directly from external Amazon AWS S3 cloud buckets using `COPY INTO` architecture.
-* **Live Data Shares**: Integrated real-time, zero-maintenance global weather telemetry feeds natively via the Snowflake Marketplace to eliminate complex ETL processing overhead.
+## Project Overview
 
-### 2. Data Transformation (SQL & Programmable Logic)
-* **Relational Views**: Engineered structural, harmonized data views to blend disparate transaction and environmental datasets while enforcing strict data governance.
-* **User-Defined Functions (UDFs)**: Built and compiled custom procedural SQL functions to handle automated mathematical value conversions across production datasets.
+This project follows an Ingestion–Transformation–Delivery architecture.
 
-### 3. Application Delivery (Python & Analytical Interface)
-* **Streamlit Integration**: Authored a native Python data application leveraging the Streamlit framework inside the cloud ecosystem to render live, interactive trend analytics and charts directly to business end-users.
+Transactional Tasty Bytes data was loaded from an external Amazon S3 source into Snowflake. The data was transformed using SQL and combined with historical weather data for Hamburg, Germany. The final analytical dataset was displayed through a native Streamlit application inside Snowflake.
 
-## 🛠️ Technical Stack
-* **Cloud Data Platform**: Snowflake Data Cloud
-* **Cloud Infrastructure Provider**: Amazon Web Services (AWS S3)
-* **Languages**: SQL (DDL/DML), Python 3.x
-* **Application Framework**: Streamlit
+## Architecture
+
+```mermaid
+flowchart LR
+    A[AWS S3 CSV Data] --> B[Snowflake Stage]
+    B --> C[Raw Tables]
+    D[Weather Marketplace Data] --> E[SQL Transformations]
+    C --> E
+    E --> F[User-Defined Functions]
+    F --> G[Harmonized Views]
+    G --> H[Streamlit Dashboard]
+```
+
+## Project Stages
+
+### Ingestion
+
+- Configured an external Snowflake stage.
+- Loaded CSV records from Amazon S3.
+- Used `COPY INTO` to populate relational tables.
+- Verified the imported data.
+
+### Transformation
+
+- Analysed Hamburg sales data.
+- Combined sales and weather information.
+- Created SQL views.
+- Created Fahrenheit-to-Celsius and inches-to-millimetres functions.
+- Produced an analysis-ready dataset.
+
+### Delivery
+
+- Created a Python Streamlit application inside Snowflake.
+- Connected the application to the transformed data.
+- Displayed sales and weather analytics.
+
+## Technologies
+
+- Snowflake
+- SQL
+- AWS S3
+- Snowflake Marketplace
+- Python
+- Streamlit
+- GitHub
+
+## Repository Structure
+
+```text
+.
+├── sql
+│   ├── D-E1.1.sql
+│   ├── D-E1.2.sql
+│   ├── D-E2.1.sql
+│   ├── D-E2.2.sql
+│   ├── D-E2.3.sql
+│   └── D-E_COMP.sql
+├── app
+│   └── HAMBURG_GERMANY_TRENDS.py
+└── screenshots
+    ├── streamlit-dashboard.png
+    ├── hamburg-analysis.png
+    ├── snowflake-workspace.png
+    └── validation-result.png
+```
+
+## Execution Order
+
+```text
+1. D-E1.1.sql
+2. D-E1.2.sql
+3. D-E2.1.sql
+4. D-E2.2.sql
+5. D-E2.3.sql
+6. D-E_COMP.sql
+7. HAMBURG_GERMANY_TRENDS.py
+```
+
+## Project Evidence
+
+### Streamlit Dashboard
+
+![Streamlit dashboard](screenshots/streamlit-dashboard.png)
+
+### Hamburg Analysis
+
+![Hamburg analysis](screenshots/hamburg-analysis.png)
+
+### Snowflake Workspace
+
+![Snowflake workspace](screenshots/snowflake-workspace.png)
+
+### Validation Result
+
+![Validation result](screenshots/validation-result.png)
+
+## Skills Demonstrated
+
+- Cloud data ingestion
+- SQL transformations
+- External stages
+- `COPY INTO`
+- User-defined functions
+- Data integration
+- Streamlit application development
+- Data validation
+- Technical documentation
+
+## Project Context
+
+This project was completed in a Snowflake learning environment using the fictional Tasty Bytes dataset. This repository documents my completed implementation, code and results.
