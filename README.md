@@ -90,7 +90,7 @@ flowchart LR
 
 ### Streamlit Dashboard
 
-![Streamlit dashboard](snowflake-tasty-bites-pipeline/screenshots/streamlit-dashboard.png)
+![Streamlit dashboard](snowflake-tasty-bytes-data-pipeline/screenshots/streamlit-dashboard.png)
 
 ### Hamburg Analysis
 
