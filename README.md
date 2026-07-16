@@ -94,15 +94,15 @@ flowchart LR
 
 ### Hamburg Analysis
 
-![Hamburg analysis](screenshots/hamburg-analysis.png)
+![Hamburg analysis](snowflake-tasty-bytes-data-pipeline/screenshots/hamburg-analysis.png)
 
 ### Snowflake Workspace
 
-![Snowflake workspace](screenshots/snowflake-workspace.png)
+![Snowflake workspace](snowflake-tasty-bytes-data-pipeline/screenshots/snowflake-workspace.png)
 
 ### Validation Result
 
-![Validation result](screenshots/validation-result.png)
+![Validation result](snowflake-tasty-bytes-data-pipeline/screenshots/validation-result.png)
 
 ## Skills Demonstrated
 
